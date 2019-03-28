@@ -21,17 +21,33 @@ class DashboardState extends State<Dashboard> {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: Center(
-        child: Card(
-           color: Colors.black,
-           child: Text(
-             'jestem karta',
-             style: TextStyle(
-               color: Colors.white
-               )
-            ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.tealAccent,
+              height: 120.0,
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.child_care, size: 45.0,),
+                    Padding(padding: EdgeInsets.only(left: 30.0),),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Agnieszka'),
+                        Text('Nowe zadanie na jutro')
+                      ],
+                    )
+                  ],
+                )
+              ),
+            )
+          )
         )
-      ),
     );
   }
 }
