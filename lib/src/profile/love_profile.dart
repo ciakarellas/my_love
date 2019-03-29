@@ -11,15 +11,34 @@ class MyLove extends StatefulWidget{
 class MyLoveState extends State<MyLove> {
   
   Widget build(context){
-    return MaterialApp(
-      home: Scaffold(
-        body: Hero(
-          tag: 'love',
-          child: Center(
-            child: Text('Agnieszka'),
+    return Scaffold(
+        body: Container(
+          padding: EdgeInsets.all(20.0),
+          color: Colors.tealAccent,
+          height: 400.0,
+          child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Icon(Icons.child_care, size: 45.0,),
+                Padding(padding: EdgeInsets.only(left: 30.0),),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Agnieszka',
+                    ),
+                    Text('Nowe zadanie na jutro')
+                  ],
+                ),
+                RaisedButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.cancel),
+                ),
+              ],
+            )
           ),
-        )
-      ),
-    );
+        );
   }
 }

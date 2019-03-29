@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './profile/love_profile.dart';
 
 class Dashboard extends StatefulWidget{
   @override
@@ -26,33 +27,36 @@ class DashboardState extends State<Dashboard> {
           padding: EdgeInsets.all(20.0),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15),
-            child: Hero(
-              tag: 'love',
-                child: Container(
-                  padding: EdgeInsets.all(20.0),
-                  color: Colors.tealAccent,
-                  height: 120.0,
-                  child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, '/my_love');
+              },
+              child: Container(
+                padding: EdgeInsets.all(20.0),
+                color: Colors.tealAccent,
+                height: 120.0,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.child_care, size: 45.0,),
+                    Padding(padding: EdgeInsets.only(left: 30.0),),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.child_care, size: 45.0,),
-                        Padding(padding: EdgeInsets.only(left: 30.0),),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'Agnieszka',
-                            ),
-                            Text('Nowe zadanie na jutro')
-                          ],
-                        )
+                        Text(
+                          'Agnieszka',
+                        ),
+                        Text('Nowe zadanie na jutro')
                       ],
                     )
-                  ),
-                ),
+                  ],
+                )
+              ),
+              ),
             )
           )
         )
     );
   }
 }
+
